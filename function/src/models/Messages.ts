@@ -1,5 +1,6 @@
-import { Sequelize, DataTypes, Model } from 'sequelize';
-import { sequelize } from '../db';
+import { DataTypes, Model } from 'sequelize';
+import Database from '../db';
+
 
 
 class Messages extends Model {
@@ -23,8 +24,8 @@ Messages.init({
         allowNull: false,
     },
 }, {
-    tableName: "messages",
-    sequelize,
+    tableName: 'messages',
+    sequelize: Database.connection,
     timestamps: false,
 });
 

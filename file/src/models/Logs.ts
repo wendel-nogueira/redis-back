@@ -1,10 +1,12 @@
-import { Sequelize, DataTypes, Model } from 'sequelize';
-import { sequelize } from '../db';
+import { DataTypes, Model } from 'sequelize';
+import Database from '../db';
+
 
 
 class Logs extends Model {
     public id!: number;
-    public operation!: string;
+    public channel!: string;
+    public info!: string;
     public date!: Date;
 }
 
@@ -14,7 +16,11 @@ Logs.init({
         autoIncrement: true,
         primaryKey: true,
     },
-    operation: {
+    channel: {
+        type: new DataTypes.STRING(128),
+        allowNull: false,
+    },
+    info: {
         type: new DataTypes.STRING(128),
         allowNull: false,
     },
@@ -23,8 +29,8 @@ Logs.init({
         allowNull: false,
     },
 }, {
-    tableName: "logs",
-    sequelize,
+    tableName: 'logs',
+    sequelize: Database.connection,
     timestamps: false,
 });
 

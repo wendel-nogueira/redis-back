@@ -9,7 +9,9 @@
     "dev": "ts-node-dev --respawn --transpile-only --exit-child --watch src src/server.ts"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.0.2",
+    "express": "^4.18.1",
     "fs": "^0.0.1-security",
     "ioredis": "^5.2.3",
     "redis": "^4.3.1",
