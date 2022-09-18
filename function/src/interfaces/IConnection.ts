@@ -1,6 +1,9 @@
 interface IConnection {
-    host: string;
-    port: number;
+    socket: {
+        host: string;
+        port: number;
+    },
+    password: string;
 }
 
 export { IConnection };

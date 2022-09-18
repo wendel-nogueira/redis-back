@@ -11,9 +11,7 @@ class RedisController {
 
 
     constructor(connection: IConnection, channel: string) {
-        this.redisClient = createClient({
-            socket: connection
-        });
+        this.redisClient = createClient(connection);
 
         this.channel = channel;
         this.operationController = new OperationController();

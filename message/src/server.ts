@@ -8,8 +8,11 @@ import { IConnection } from './interfaces/IConnection';
 config({ path: resolve(__dirname, '../../.env') });
 
 const connection: IConnection = {
-    host: process.env.REDIS_HOST || '127.0.0.1',
-    port: parseInt(process.env.REDIS_PORT || '6379')
+    socket: {
+        host: process.env.REDIS_HOST || '127.0.0.1',
+        port: parseInt(process.env.REDIS_PORT || '6379')
+    },
+    password: process.env.REDIS_PASSWORD!,
 };
 
 const channel = process.env.REDIS_MESSAGE_CHANNEL || 'message';
