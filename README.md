@@ -45,7 +45,7 @@ Pastas do projeto:
 
 ### Variáveis de ambiente
 
-> Este projeto utiliza variáveis de ambiente para sincronizar os canais de comunicação e o servidor redis, sendo assim antes de executar qualquer um dos projetos presentes nas pastas citdas acima é necessário a atualização das variáveis de ambiente
+> Este projeto utiliza variáveis de ambiente para sincronizar os canais de comunicação e o servidor redis, sendo assim antes de executar qualquer um dos projetos presentes nas pastas citadas acima é necessária a atualização das variáveis de ambiente.
 
 Inicialmente é necessário copiar o arquivo ```.env.example``` e renomeá-lo para ```.env```, feito isso basta atualizar as variáveis de ambiente alterando os valores para modificar o servidor redis e/ou os canais de comunicação.
 
