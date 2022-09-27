@@ -2,6 +2,14 @@ import { Messages } from '../models/Messages';
 import { IMessage } from '../interfaces/IMessage';
 
 
+const defaultMessages: {} = {
+    'oi': 'olá',
+    'olá': 'oi',
+    'opa': 'bao',
+    'bao': 'opa',
+    'tudo bem?': 'tudo sim e com você?'
+};
+
 
 class MessageController {
     async handle(message: IMessage) {
@@ -39,8 +47,15 @@ class MessageController {
                 message: message,
                 response: response[random].response
             };
+        } 
+        
+        if (defaultMessages[message]) {
+            return {
+                message: message,
+                response: defaultMessages[message]
+            };
         } else {
-            throw new Error('Mensagem não encontrada');
+            throw new Error('Resposta não disponível');
         }
     }
 
